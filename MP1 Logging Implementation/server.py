@@ -16,6 +16,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             pattern=json.loads(data.decode('utf-8'))["pattern"]
             print(f"Received Pattern: {pattern}")
             conn.sendall(json.dumps(pattern).encode('utf-8'))
-            print("Sent Data...")
         except Exception as e:
             print(e)
