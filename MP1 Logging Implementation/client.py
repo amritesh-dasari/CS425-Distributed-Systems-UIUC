@@ -1,7 +1,6 @@
 # Client.py
 import time
-import os
-import socket
+import sys
 import threading
 
 VMS = []
@@ -30,6 +29,9 @@ def search_query(pattern):
     for thread in threads:
         thread.join()
     stopwatch=time.time()
-    print("Stopwatch Time : ",startwatch-stopwatch)
+    print("Stopwatch Time : ",stopwatch-startwatch)
 
-search_query("Bruh")
+if __name__ == '__main__':
+    pattern=sys.argv[1]
+    print(sys.argv)
+    search_query(pattern)
